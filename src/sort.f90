@@ -34,17 +34,19 @@ contains
 
         pivot = array(permutation((first+last)/2))
 
-        i = first
-        j = last
+        i = first-1
+        j = last+1
 
         ! Hoare partition scheme
         do
-            do while (array(permutation(i)) < pivot)
+            do
                 i = i+1
+                if (array(permutation(i)) >= pivot) exit
             end do
 
-            do while (array(permutation(j)) > pivot)
+            do
                 j = j-1
+                if (array(permutation(j)) <= pivot) exit
             end do
 
             if (i >= j) exit

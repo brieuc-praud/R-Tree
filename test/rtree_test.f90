@@ -1,7 +1,7 @@
 ! This test program generates two sets of N segments then does two checks:
 ! - if the R-Tree implementation finds the same number of intersections between the two sets than the brute force algorithm;
 ! - if the R-Tree implementation is actually faster than the brute force approach.
-program test
+program rtree_test
     use iso_fortran_env, only: f64 => real64
     use mod_rtree,       only: t_r_tree, create, clean, search
     use mod_geometry,    only: segment_bounding_box, segments_intersect
@@ -116,4 +116,4 @@ contains
         end select
     end subroutine overlap
 
-end program test
+end program rtree_test
